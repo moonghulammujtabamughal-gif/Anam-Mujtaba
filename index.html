@@ -685,3 +685,971 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Anam ❤️ Mujtaba — Our Memories</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b12;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at 20% 20%, #5b174c 0, transparent 35%),
+        radial-gradient(circle at 80% 70%, #182d5c 0, transparent 35%),
+        #0b0b12;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .small-title {
+      color: #ff8fbd;
+      font-size: 15px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(45px, 10vw, 90px);
+      line-height: 1;
+      margin-bottom: 25px;
+
+      background: linear-gradient(
+        90deg,
+        #ff6fae,
+        #ffffff,
+        #a978ff
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: clamp(17px, 4vw, 23px);
+      color: #d7d7df;
+      line-height: 1.7;
+    }
+
+    .heart {
+      display: inline-block;
+      animation: heartbeat 1.4s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.25);
+      }
+    }
+
+    .scroll-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 25px;
+      border-radius: 50px;
+
+      background: linear-gradient(
+        135deg,
+        #ff4f9a,
+        #8c5cff
+      );
+
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+
+      box-shadow:
+        0 10px 35px rgba(255, 79, 154, 0.25);
+
+      transition: 0.3s;
+    }
+
+    .scroll-btn:hover {
+      transform: translateY(-4px);
+    }
+
+    /* FLOATING HEARTS */
+
+    .floating-heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 20px;
+      opacity: 0.7;
+      animation: floatUp linear infinite;
+    }
+
+    .floating-heart:nth-child(1) {
+      left: 10%;
+      animation-duration: 9s;
+    }
+
+    .floating-heart:nth-child(2) {
+      left: 25%;
+      animation-duration: 12s;
+      animation-delay: 2s;
+    }
+
+    .floating-heart:nth-child(3) {
+      left: 50%;
+      animation-duration: 10s;
+      animation-delay: 1s;
+    }
+
+    .floating-heart:nth-child(4) {
+      left: 75%;
+      animation-duration: 13s;
+      animation-delay: 3s;
+    }
+
+    .floating-heart:nth-child(5) {
+      left: 90%;
+      animation-duration: 8s;
+      animation-delay: 4s;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+      }
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      width: min(1100px, 100%);
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 6vw, 50px);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #a7a7b3;
+      font-size: 17px;
+    }
+
+    /* MEMORIES */
+
+    .memories {
+      background: #101019;
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .memory-card {
+      background: #181822;
+      border: 1px solid #292936;
+      border-radius: 22px;
+      overflow: hidden;
+      transition: 0.35s;
+    }
+
+    .memory-card:hover {
+      transform: translateY(-8px);
+      border-color: #ff5da8;
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .memory-image {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      background:
+        linear-gradient(
+          135deg,
+          #43213d,
+          #202044
+        );
+    }
+
+    video.memory-image {
+      object-fit: cover;
+    }
+
+    .memory-content {
+      padding: 22px;
+    }
+
+    .date {
+      color: #ff72ad;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .memory-content h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .memory-content p {
+      color: #aaaab7;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* TIMELINE */
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      background:
+        linear-gradient(
+          #ff579f,
+          #8c5cff
+        );
+
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      width: 50%;
+      padding: 15px 35px;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+
+      background: #ff65a8;
+      border-radius: 50%;
+
+      top: 25px;
+
+      box-shadow:
+        0 0 20px #ff65a8;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -8px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -8px;
+    }
+
+    .timeline-box {
+      background: #181822;
+      border: 1px solid #292936;
+      padding: 22px;
+      border-radius: 18px;
+    }
+
+    .timeline-box h3 {
+      margin-bottom: 8px;
+    }
+
+    .timeline-box p {
+      color: #aaaab7;
+      line-height: 1.6;
+    }
+
+    /* COUNTER */
+
+    .counter-section {
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #351b39,
+          transparent 55%
+        ),
+        #0b0b12;
+    }
+
+    .counter-box {
+      max-width: 700px;
+      margin: auto;
+      padding: 45px 25px;
+
+      border: 1px solid #30283b;
+      border-radius: 25px;
+
+      background: rgba(255,255,255,0.03);
+    }
+
+    .counter-box h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    #days {
+      font-size: clamp(45px, 10vw, 80px);
+      font-weight: bold;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ff68aa,
+          #a878ff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .counter-label {
+      color: #aaaab7;
+      font-size: 16px;
+    }
+
+    /* QUOTE */
+
+    .quote {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .quote-text {
+      max-width: 800px;
+      margin: auto;
+
+      font-size: clamp(25px, 5vw, 42px);
+      line-height: 1.4;
+      font-weight: bold;
+    }
+
+    .quote-small {
+      margin-top: 25px;
+      color: #ff79b1;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+
+      background: #08080d;
+      color: #777784;
+    }
+
+    footer span {
+      color: #ff6eac;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .memory-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .memory-image {
+        height: 260px;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(even),
+      .timeline-item:nth-child(odd) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+
+        padding-left: 40px;
+        padding-right: 0;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-dot,
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: 2px;
+        right: auto;
+      }
+
+      section {
+        padding: 70px 18px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="floating-heart">❤️</div>
+    <div class="floating-heart">💗</div>
+    <div class="floating-heart">💕</div>
+    <div class="floating-heart">💖</div>
+    <div class="floating-heart">❤️</div>
+
+    <div class="hero-content">
+
+      <div class="small-title">
+        A Collection Of Beautiful Moments
+      </div>
+
+      <h1>
+        Anam <span class="heart">❤️</span> Mujtaba
+      </h1>
+
+      <p>
+        A little corner of the internet dedicated to
+        memories, moments and beautiful days.
+      </p>
+
+      <a href="#memories" class="scroll-btn">
+        Explore Memories ↓
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- MEMORIES -->
+
+  <section class="memories" id="memories">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Our Memories 📸</h2>
+
+        <p>
+          Every picture and video has a story.
+        </p>
+
+      </div>
+
+
+      <div class="memory-grid">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="memory-card">
+
+          <img
+            class="memory-image"
+            src="1778067705308.png"
+            alt="Memory 1"
+          >
+
+          <div class="memory-content">
+
+            <div class="date">
+              MEMORY #01
+            </div>
+
+            <h3>
+              The Beginning ✨
+            </h3>
+
+            <p>
+              Every beautiful story has a beginning.
+              This is where our collection of memories starts.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="memory-card">
+
+          <img
+            class="memory-image"
+            src="1779318033141.jpg"
+            alt="Memory 2"
+          >
+
+          <div class="memory-content">
+
+            <div class="date">
+              MEMORY #02
+            </div>
+
+            <h3>
+              Beautiful Moment 💕
+            </h3>
+
+            <p>
+              A beautiful moment worth remembering.
+              Some memories stay special forever.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="memory-card">
+
+          <img
+            class="memory-image"
+            src="IMG-20260518-WA0022.jpg"
+            alt="Memory 3"
+          >
+
+          <div class="memory-content">
+
+            <div class="date">
+              MEMORY #03
+            </div>
+
+            <h3>
+              Special Memory 📸
+            </h3>
+
+            <p>
+              Another beautiful memory from our story.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="memory-card">
+
+          <img
+            class="memory-image"
+            src="Snapchat-913569292.jpg"
+            alt="Memory 4"
+          >
+
+          <div class="memory-content">
+
+            <div class="date">
+              MEMORY #04
+            </div>
+
+            <h3>
+              Another Chapter 💫
+            </h3>
+
+            <p>
+              A moment to remember forever.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- VIDEO 1 -->
+
+        <div class="memory-card">
+
+          <video
+            class="memory-image"
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="VID-20260626-WA0015.mp4"
+              type="video/mp4"
+            >
+
+            Your browser does not support video.
+
+          </video>
+
+          <div class="memory-content">
+
+            <div class="date">
+              VIDEO #01
+            </div>
+
+            <h3>
+              A Special Moment 🎥
+            </h3>
+
+            <p>
+              A memory captured in motion.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- VIDEO 2 -->
+
+        <div class="memory-card">
+
+          <video
+            class="memory-image"
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="VID-20260719-WA0004.mp4"
+              type="video/mp4"
+            >
+
+            Your browser does not support video.
+
+          </video>
+
+          <div class="memory-content">
+
+            <div class="date">
+              VIDEO #02
+            </div>
+
+            <h3>
+              Beautiful Memories 🎬
+            </h3>
+
+            <p>
+              Another moment from our memories.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- VIDEO 3 -->
+
+        <div class="memory-card">
+
+          <video
+            class="memory-image"
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="VID-20260726-WA0001.mp4"
+              type="video/mp4"
+            >
+
+            Your browser does not support video.
+
+          </video>
+
+          <div class="memory-content">
+
+            <div class="date">
+              VIDEO #03
+            </div>
+
+            <h3>
+              Forever Memories ❤️
+            </h3>
+
+            <p>
+              A moment worth keeping forever.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TIMELINE -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Our Timeline 🕰️
+        </h2>
+
+        <p>
+          A few important moments.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-box">
+
+            <h3>
+              🌱 The Beginning
+            </h3>
+
+            <p>
+              The first chapter of our memories started here.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-box">
+
+            <h3>
+              ✨ First Special Memory
+            </h3>
+
+            <p>
+              A moment that became a part of our story.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-box">
+
+            <h3>
+              📸 More Memories
+            </h3>
+
+            <p>
+              More pictures, more moments and more stories
+              to remember.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-box">
+
+            <h3>
+              💫 Today
+            </h3>
+
+            <p>
+              The story continues with many more memories
+              waiting to be created.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- COUNTER -->
+
+  <section class="counter-section">
+
+    <div class="counter-box">
+
+      <h2>
+        Days Since Our Special Date ❤️
+      </h2>
+
+      <div id="days">
+        0
+      </div>
+
+      <div class="counter-label">
+        days of memories
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUOTE -->
+
+  <section class="quote">
+
+    <div class="container">
+
+      <div class="quote-text">
+        “The best memories are the moments
+        we never planned.”
+      </div>
+
+      <div class="quote-small">
+        — Anam ❤️ Mujtaba
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    Made with
+    <span>❤️</span>
+    for beautiful memories.
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    /*
+      SPECIAL DATE:
+      12 April 2026
+    */
+
+    const specialDate =
+      new Date("2026-04-12T00:00:00");
+
+
+    function updateDays() {
+
+      const today = new Date();
+
+      const difference =
+        today - specialDate;
+
+      const days =
+        Math.floor(
+          difference /
+          (1000 * 60 * 60 * 24)
+        );
+
+      document.getElementById("days").textContent =
+        days >= 0 ? days : 0;
+
+    }
+
+
+    updateDays();
+
+    setInterval(
+      updateDays,
+      60000
+    );
+
+  </script>
+
+</body>
+</html>
